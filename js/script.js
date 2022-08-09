@@ -1,29 +1,19 @@
-//https://jsonlint.com (ai website ta holo: amra je JSON likhsi seta valid kina dekhar jnno)
+// JSON.stringify() --> JS object to JSON String
+// JSON.parse() -->  JSON String to JS Object
 
-//string
-//number
-//Object(JSON)
-//array 
-//boolean
-//null
-
-///Doesn't Support undefined,date,function
-var student = {
-    name: "Rahim",
-    age: 26,
-    hometown: "Dhaka",
-    married: false,
-    dob: 1995-05-12,
-    test_null: null,
-    test_undefined: undefined,
-    greet: function(){ //function
-        console.log(`Hello ${this.name}`);
-    }
+var person1 = {
+    "name": "Rahim",
+    "age": 25,
+    "hometown": "Dhaka",
+    "married": false
 };
 
-var student_json = JSON.stringify(student);
+var person2 = {
+    name: "Karim",
+    age: 35,
+    hometown: "Chittagong",
+    married: true
+};
 
-console.log(student_json);
-
-var student_new = JSON.parse(student_json);
-console.log(student_new);
+console.log(person2);
+console.log(person1);
