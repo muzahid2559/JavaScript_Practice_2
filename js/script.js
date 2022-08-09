@@ -1,38 +1,17 @@
-// Promises
-// .then
-let persons = [
-    { firstName: "Simanta", lastName: "Paul" },
-    { firstName: "Fazle", lastName: "Rahat" }
-]
+// Fetch API
+// Fetch API Uses JavaSript Promise
 
-function createPerson(person) {
-    let prom = new Promise(function (resolve, reject) {
-        persons.push(person);
-        let error = false;
+document.getElementById("get_data").addEventListener('click', getData);
 
-        if (!error) {
-            resolve();
-        }
-        else {
-            reject('Error!: Something Wrong!');
-        }
+// xhr.open('GET', 'http://api.icndb.com/jokes/random/', true);
 
-    });
-    return prom;
+
+
+// Arrow Function
+
+function getData() {
+    fetch('http://api.icndb.com/jokes/random')
+        .then(res => res.json())
+        .then(data => { console.log(data); })
+        .catch(err => {console.log(err); })
 }
-
-function getPerson() {
-    setTimeout(function () {
-        let output = '';
-        persons.forEach(function (person) {
-            output += `<li>${person.firstName} ${person.lastName}</li>`
-        });
-        document.getElementById('output').innerHTML = output;
-    }, 500);
-}
-
-createPerson({ firstName: "Rony", lastName: "Chy" })
-    .then(getPerson)
-    .catch(function (err) {
-        console.log(err);
-    });
