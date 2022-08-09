@@ -1,37 +1,51 @@
-// http://www.icndb.com/api/
-// API
-// RESTful API
+// Callback Function 
 
-document.getElementById('get_data').addEventListener('click', loadJokes);
+// setTimeout(function(){
+//     console.log("Hello World!");
+// }, 5000);
 
-function loadJokes(e) {
-    let number = document.getElementById('numberJokes').value;
-    //console.log(number);
-    let xhr = new XMLHttpRequest();
+// let persons = [
+//     {firstName: "Muzahidul", lastName: "Islam"},
+//     {firstName: "Fazle", lastName: "Rahat"}
+// ]
 
-    xhr.open('GET', `http://api.icndb.com/jokes/random/${number}`, true);
+// function createPerson(person) {
+//    setTimeout(function() {
+//        persons.push(person);
+//    }, 4000); 
+// }
 
-    xhr.onprogress = function () {
-        document.getElementById('output').innerHTML = "<h3>Loading......</h3>";
-    }
+// function getPerson() {
+//     setTimeout(function(){
+//         let output = '';
+//         persons.forEach(function(person){
+//             output += `<li>${person.firstName} ${person.lastName}</li>`
+//         }); 
+//         document.getElementById('output').innerHTML = output;
+//     }, 1000);
+// }
 
-    xhr.onload = function () {
-        if (this.status === 200) {
-            let data = JSON.parse(this.responseText);
-            let jokes = data.value;
-            let output = "<ol>";
+let persons = [
+    {firstName: "Muzahidul", lastName: "Islam"},
+    {firstName: "Fazle", lastName: "Rahat"}
+]
 
-            jokes.forEach(function (item) {
-                //console.log(item.joke);
-                output += `<li>${item.joke}</li>`;
-            });
-            output += "</ol>";
-
-            document.getElementById('output').innerHTML = output;
-            //console.log(jokes);
-            //console.log(data);
-        }
-    }
-
-    xhr.send();
+function createPerson(person, callback) {
+   setTimeout(function() {
+       persons.push(person);
+       callback();
+   }, 2000); 
 }
+
+function getPerson() {
+    setTimeout(function(){
+        let output = '';
+        persons.forEach(function(person){
+            output += `<li>${person.firstName} ${person.lastName}</li>`
+        }); 
+        document.getElementById('output').innerHTML = output;
+    }, 500);
+}
+
+createPerson({firstName:"Rony", lastName: "Chy"}, getPerson);
+createPerson({firstName:"Jibon", lastName: "Ahmed"}, getPerson);
