@@ -1,13 +1,11 @@
-// Template literals (ES6)
-// Backtick ``
-let name = "Rahim";
-let age = "38";
-let dob = "21 June, 1983";
+//Array Destructuring
+let fruits = ["Apple", "Grape", "Orange"];
 
-console.log(`His name is ${name}
-His age is ${age}
-Date of Birth ${dob}`);
+let [fruit1,fruit2,fruit3] = fruits;
+console.log(fruit1,fruit2,fruit3);
 
-let a = 34
-let b = 67
-console.log(`${a} + ${b} = ${ a + b }`);
+//Array Destructuring
+let fruit = ["Apple", "Grape", "Orange"];
+
+let [fruits1, ,fruits3] = fruit;
+console.log(fruit1,fruit3);
