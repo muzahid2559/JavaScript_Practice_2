@@ -1,29 +1,26 @@
-// Rest Operator ...
-
-let fruits = ['apple', 'grape', 'mango', 'jackfruit'];
-let [first, second, ...third] = fruits
-
-// console.log(first);
-// console.log(second);
-// console.log(third);
-
-let person = {
-    fname: "Muzahidul",
-    lname: "Islam",
-    dob: "8-26-1995"
+//ES5 Contructor
+function Person(age,name) {
+    this.age = age;
+    this.name = name;
+}
+Person.prototype.getName = function(){
+    console.log(this.name);
 }
 
-let {fname, ...lname} = person
 
-// console.log(fname);
-// console.log(lname);
-
-let moreNum = [78,1,2,5,6];
-
-let test =(name, ...numbers) => { // Rest
-    console.log(name);
-    console.log(numbers);
+//ES6 Class
+class Person{
+    constructor(age, name){
+        this.age = age;
+        this.name = name;
+    }
+    getName(){
+        console.log(this.name);
+    }
 }
 
-test("Simanta", 67,3,3);
-test("Simanta", ...moreNum); // Spread
+
+
+let person1 = new Person(25, "Muzahid");
+console.log(person1);
+console.log(person1.getName);
