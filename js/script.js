@@ -1,22 +1,20 @@
-// Swap Variables
+// Object Destructing
+
+let person = {
+    firstName: "Muzahid",
+    lastName: "Islam",
+    dob: '09-27-1995'
+}
+
+// let fname = person.firstName,
+// lname = person.lastName,
+// dob = person.dob;
+//let { firstName : fname, lastName, dob } = person;
+//console.log(fname, lastName, dob);
 
 
-//normal swapping
-let a, b;
-a = 8; b= 20;
+function display({ firstName : fname, lastName, dob  }) {
+    console.log(fname, lastName, dob);
+}
 
-let temp = a;
-a = b;
-b = temp;
-
-console.log(`a = ${a} and b = ${b}`);
-
-
-//easily swapping
-let c, d;
-c = 10; d= 30;
-
-[c, d] = [d , c];
-
-console.log(`c = ${c} and d = ${d}`);
-
+display(person);
