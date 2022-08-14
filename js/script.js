@@ -1,26 +1,29 @@
-//ES5 Contructor
-function Person(age,name) {
-    this.age = age;
-    this.name = name;
-}
-Person.prototype.getName = function(){
-    console.log(this.name);
-}
+// Symbols
 
 
-//ES6 Class
-class Person{
-    constructor(age, name){
-        this.age = age;
-        this.name = name;
-    }
-    getName(){
-        console.log(this.name);
-    }
-}
+// let a = Symbol()
+
+// let person = {
+//     name: "Muzahidul",
+//     age: 25,
+//     [a]: "Hello World!"
+// }
+
+// console.log(person);
+// console.log(Object.getOwnPropertyNames(person));
+// console.log(Object.getOwnPropertySymbols(person));
+// console.log(Object.keys(person));
+// console.log(JSON.stringify(person));
 
 
 
-let person1 = new Person(25, "Muzahid");
-console.log(person1);
-console.log(person1.getName);
+// for (x in person) {
+//     console.log(x);
+    
+// }
+
+let sym1 = Symbol("Hello");
+let sym2 = Symbol("Hello");
+
+console.log(sym1 == sym2);
+console.log(sym1);
