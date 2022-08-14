@@ -1,20 +1,28 @@
-// Object Destructing
+// Spread Operator ...
 
+
+//Spread on String
+let str = "Bohubrihi";
+let newStr = [...str];
+
+//console.log(newStr);
+
+
+//Spread on Array
+let fruit1 = ["Apple", "Pine-apple", "Mango"];
+let fruit2 = ["Orange", "Grape"];
+let newFruit = "Jackfruit";
+
+let newArr = [...fruit1, newFruit, ...fruit2];
+
+//console.log(newArr);
+
+
+// Spread on Object (ES8)
 let person = {
-    firstName: "Muzahid",
-    lastName: "Islam",
-    dob: '09-27-1995'
+    fname: "Simanta",
+    lname: "Paul"
 }
 
-// let fname = person.firstName,
-// lname = person.lastName,
-// dob = person.dob;
-//let { firstName : fname, lastName, dob } = person;
-//console.log(fname, lastName, dob);
-
-
-function display({ firstName : fname, lastName, dob  }) {
-    console.log(fname, lastName, dob);
-}
-
-display(person);
+let newPerson = {...person, dob: "08-26-1995"}
+console.log(newPerson);
