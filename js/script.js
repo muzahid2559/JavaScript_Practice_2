@@ -1,29 +1,13 @@
-// Normal Declaration
-function saySomething(name) {
-    console.log('Hello ' + name);
-}
+// Template literals (ES6)
+// Backtick ``
+let name = "Rahim";
+let age = "38";
+let dob = "21 June, 1983";
 
-// Function Expression
+console.log(`His name is ${name}
+His age is ${age}
+Date of Birth ${dob}`);
 
-let saySomething1 = function(name2) {
-    console.log('Hello ' + name2);
-}
-
-// Arrow Function (ES6)
-
-let saySomething2 = (name3) => {
-    console.log("I am " + name3);
-}
-
-let saySomething3 = name3 => console.log("I am " + name3);
-
-let saySomething4 = name => {return  name;}
-
-
-
-
-saySomething("Muzahid");
-saySomething1("Khandakar");
-saySomething2("Learn JavaScript");
-saySomething3("Learn JavaScript");
-saySomething4("Learn JavaScript");
+let a = 34
+let b = 67
+console.log(`${a} + ${b} = ${ a + b }`);
