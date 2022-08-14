@@ -1,28 +1,13 @@
 // Spread Operator ...
+ 
+let numbers = [23, 1, 0, -1];
 
+console.log(Math.max(...numbers));
 
-//Spread on String
-let str = "Bohubrihi";
-let newStr = [...str];
+let person = ["Muzahidul", "Islam"]
 
-//console.log(newStr);
-
-
-//Spread on Array
-let fruit1 = ["Apple", "Pine-apple", "Mango"];
-let fruit2 = ["Orange", "Grape"];
-let newFruit = "Jackfruit";
-
-let newArr = [...fruit1, newFruit, ...fruit2];
-
-//console.log(newArr);
-
-
-// Spread on Object (ES8)
-let person = {
-    fname: "Simanta",
-    lname: "Paul"
+let test = (fname, lname) => {
+    console.log(`Hello ${fname} ${lname}`);
 }
 
-let newPerson = {...person, dob: "08-26-1995"}
-console.log(newPerson);
+test(...person);
