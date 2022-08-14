@@ -1,37 +1,29 @@
-//ES6 or ECMAScript6
-
-// Global Scope
-var a = 1;
-let b = 2;
-const c = 3;
-
-
-console.log(`Global Scope: `, a, b, c);
-
-function test() {
-    var a = 4;
-    let b = 5;
-    const c = 6;
-    console.log(`Functions Scope: `, a, b ,c);
+// Normal Declaration
+function saySomething(name) {
+    console.log('Hello ' + name);
 }
 
-test();
+// Function Expression
 
-console.log(`Global Scope: `, a, b, c);
-
-if (true) {
-    var a = 7;
-    let b = 8;
-    const c = 9;
-    console.log(`If Scope: ` , a, b, c);
+let saySomething1 = function(name2) {
+    console.log('Hello ' + name2);
 }
 
-console.log(`Global Scope: `, a, b, c);
+// Arrow Function (ES6)
 
-
-for (let a = 0; a <10; a ++) {
-    console.log(`Loop: `, a);
+let saySomething2 = (name3) => {
+    console.log("I am " + name3);
 }
 
+let saySomething3 = name3 => console.log("I am " + name3);
 
-console.log(`Global Scope: `, a, b, c);
+let saySomething4 = name => {return  name;}
+
+
+
+
+saySomething("Muzahid");
+saySomething1("Khandakar");
+saySomething2("Learn JavaScript");
+saySomething3("Learn JavaScript");
+saySomething4("Learn JavaScript");
