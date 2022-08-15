@@ -1,29 +1,65 @@
-// Symbols
+// // Iterator
+
+// let iterable = "Hello";
+// iterable = [1,2,3,4,5,5];
+// // Symbol.iterator
+// let iter = iterable[Symbol.iterator]();
+
+// console.log(iter);
+
+// console.log(iter.next());
+// console.log(iter.next());
+
+// console.log("Other Codes...");
+
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
+// console.log(iter.next());
 
 
-// let a = Symbol()
 
-// let person = {
-//     name: "Muzahidul",
-//     age: 25,
-//     [a]: "Hello World!"
-// }
+// Custom Iterator
 
-// console.log(person);
-// console.log(Object.getOwnPropertyNames(person));
-// console.log(Object.getOwnPropertySymbols(person));
-// console.log(Object.keys(person));
-// console.log(JSON.stringify(person));
+let names = ["Rahim", "Karim", "Rony", "Rahat"];
+function customIterator(arr) {
+    let i = 0;
+
+    return {
+        next: function() {
+            return i < arr.length ? { value: arr[i++], done: false} : { value: undefined, done: true };
+        }
+    };
+}
+
+let members = customIterator(names);
+
+console.log(members.next().value);
+console.log(members.next().value);
+console.log(members.next().value);
+console.log("Random codes...");
+console.log(members.next());
+console.log(members.next());
 
 
 
-// for (x in person) {
-//     console.log(x);
-    
-// }
 
-let sym1 = Symbol("Hello");
-let sym2 = Symbol("Hello");
+// Generators
 
-console.log(sym1 == sym2);
-console.log(sym1);
+function* genFunction() {
+    console.log("I am some code");
+    yield 1;
+    return;
+    console.log("I am some code");
+    console.log("I am some code");
+    console.log("I am some code");
+    yield "Rahim";
+    yield 4;
+    yield "Karim";
+    yield "Hello World";
+}
+
+let iter = genFunction();
+
+console.log(iter.next().value);
+console.log(iter.next().value);
