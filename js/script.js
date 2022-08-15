@@ -1,23 +1,15 @@
-// Promises
-// Successful -> resolve
-// Failed -> reject
-let prom = new Promise((resolve, reject) => {
-    let a;
-    setTimeout(() => {
-        a = 1 + 3;
-        if (a == 4) {
-            resolve('Success');
-        } else {
-            reject('Failed');
-        }
-    }, 4000);
-})
-// .then .catch
-prom.then((message) => {
-    console.log("I am from then " + message);
-}).catch((message) => {
-    console.log("I am from catch " + message);
-})
+fetch('http://api.icndb.com/jokes/random/5000')
+    .then(response => response.json())
+    .then(data => { });
 
 
-console.log("I am after Promise");
+// async await
+
+async function getJokes() {
+    let response = await fetch('http://api.icndb.com/jokes/random/5000');
+    let data = await response.json();
+    return data;
+}
+
+
+getJokes().then(jokes => console.log(jokes));
