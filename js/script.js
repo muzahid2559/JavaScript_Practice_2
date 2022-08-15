@@ -1,15 +1,37 @@
-fetch('http://api.icndb.com/jokes/random/5000')
-    .then(response => response.json())
-    .then(data => { });
+// Set
+let mySet = new Set([1, 2, 2, 4, 4]);
 
+// Add
+mySet.add("Hello");
+mySet.add(2);
+// Delete
+mySet.delete(4);
 
-// async await
+// Check
+//console.log(mySet.has(4));
+// Size
+//console.log(mySet.size);
 
-async function getJokes() {
-    let response = await fetch('http://api.icndb.com/jokes/random/5000');
-    let data = await response.json();
-    return data;
-}
+// Iterating Sets
 
+// for (x of mySet.values()) {
+//     console.log(x);
+// }
 
-getJokes().then(jokes => console.log(jokes));
+// let iter = mySet.entries();
+
+// console.log(iter.next());
+
+// console.log(iter.next());
+
+// console.log(iter.next());
+
+// for (let [x] of mySet.entries()) {
+//     console.log(x);
+// }
+
+let iter = [...mySet.values()];
+
+//console.log(iter);
+
+mySet.forEach(value => console.log(value));
