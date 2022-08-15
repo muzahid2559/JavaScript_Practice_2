@@ -1,37 +1,46 @@
-// Set
-let mySet = new Set([1, 2, 2, 4, 4]);
+// Maps
+let myMap = new Map(
+    [
+        ['first key', 10],
+        ['second key', 'Muzahidul']
+    ]
+);
 
 // Add
-mySet.add("Hello");
-mySet.add(2);
-// Delete
-mySet.delete(4);
+myMap.set('third key', 'Hello Wolrd!');
 
-// Check
-//console.log(mySet.has(4));
-// Size
-//console.log(mySet.size);
+//console.log(myMap.get('second key'));
+//console.log(myMap.has('key'));
+//console.log(myMap.size);
 
-// Iterating Sets
+// Iterate
 
-// for (x of mySet.values()) {
+// for (let x of myMap) {
 //     console.log(x);
 // }
 
-// let iter = mySet.entries();
+// for (let [x,y] of myMap) {
+//     console.log(x, y);
 
-// console.log(iter.next());
+// }
 
-// console.log(iter.next());
-
-// console.log(iter.next());
-
-// for (let [x] of mySet.entries()) {
+// for (let x of myMap.keys()) {
 //     console.log(x);
 // }
 
-let iter = [...mySet.values()];
+// for (let x of myMap.values()) {
+//     console.log(x);
+// }
 
-//console.log(iter);
+// for (let x of myMap.entries()) {
+//     console.log(x);
+// }
 
-mySet.forEach(value => console.log(value));
+// myMap.forEach((x, y) => {
+//     console.log(x,y);
+    
+// })
+//let arr = Array.from(myMap);
+//let arr = Array.from(myMap.keys());
+let arr = Array.from(myMap.values());
+console.log(arr);
